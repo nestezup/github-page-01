@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4주 실전 바이브코딩 강의</title>
     <meta name="description" content="4주 동안 데스크톱 앱 + API + YouTube 분석 + 인증 시스템을 실전으로 배우는 강의" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -53,6 +54,12 @@
           <a class="link" href="pages/week4/">자세히</a>
         </article>
       </section>
+
+      <section class="content" style="margin-bottom:32px;">
+        <h2 style="margin-top:0;">실시간 예시 차트</h2>
+        <p class="meta">데모 데이터로 그려진 방문 추이입니다.</p>
+        <canvas id="visitorsChart" data-chart="line" height="140"></canvas>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -61,6 +68,8 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/chart-examples.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
   </html>
