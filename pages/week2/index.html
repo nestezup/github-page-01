@@ -53,33 +53,35 @@
               <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
             </svg>
           </div>
-          API 연돐 성공률 데모
+          API 연동 성공률 데모
         </h2>
+        
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div>
-            <h3 class="text-lg font-semibold mb-3">주간 API 호출 현황</h3>
-            <canvas id="apiChart" data-chart="bar" height="200"></canvas>
-          </div>
-          <div class="space-y-4">
-            <div class="card bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border-emerald-500/20">
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-semibold text-emerald-300">Dify API</span>
-                <span class="text-2xl font-bold text-emerald-400">98.2%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-2">
-                <div class="bg-emerald-500 h-2 rounded-full" style="width: 98.2%"></div>
-              </div>
-              <p class="text-xs text-gray-400 mt-2">성공률</p>
+          <div class="card bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border-emerald-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-emerald-300">Dify API</span>
+              <span class="text-2xl font-bold text-emerald-400">98.2%</span>
             </div>
-            <div class="card bg-gradient-to-br from-cyan-500/10 to-cyan-600/10 border-cyan-500/20">
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-semibold text-cyan-300">Scrapper Server</span>
-                <span class="text-2xl font-bold text-cyan-400">95.7%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-2">
-                <div class="bg-cyan-500 h-2 rounded-full" style="width: 95.7%"></div>
-              </div>
-              <p class="text-xs text-gray-400 mt-2">성공률</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+              <div class="bg-emerald-500 h-2 rounded-full" style="width: 98.2%"></div>
+            </div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+3.1%</span>
+              <span class="text-gray-400">지난 주 대비 성공률</span>
+            </div>
+          </div>
+          
+          <div class="card bg-gradient-to-br from-cyan-500/10 to-cyan-600/10 border-cyan-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-cyan-300">Scrapper Server</span>
+              <span class="text-2xl font-bold text-cyan-400">95.7%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 95.7%"></div>
+            </div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+1.8%</span>
+              <span class="text-gray-400">지난 주 대비 성공률</span>
             </div>
           </div>
         </div>
@@ -211,7 +213,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span data-year></span> InsightDesk 실전 강의</p>
+        <p>© 2025 InsightDesk 실전 강의</p>
       </div>
     </footer>
 

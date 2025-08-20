@@ -106,19 +106,33 @@
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div>
-            <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
-              <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-              주간 조회수 추이
-            </h3>
-            <canvas id="ytChart" data-chart="bar" height="200"></canvas>
+          <div class="card bg-gradient-to-br from-violet-500/10 to-violet-600/10 border-violet-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-violet-300">주간 조회수 증가</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                <path d="m3 3 3 9 4-6 5 6 3-9"/>
+                <circle cx="18" cy="6" r="3"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-violet-400 mb-1">+47.3K</div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+18.9%</span>
+              <span class="text-gray-400">지난 주 대비</span>
+            </div>
           </div>
-          <div>
-            <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
-              <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-              콘텐츠 유형별 분포
-            </h3>
-            <canvas id="contentChart" data-chart="doughnut" height="200"></canvas>
+          
+          <div class="card bg-gradient-to-br from-pink-500/10 to-pink-600/10 border-pink-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-pink-300">인기 콘텐츠</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-pink-400 mb-1">튜토리얼</div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">67%</span>
+              <span class="text-gray-400">전체 조회수</span>
+            </div>
           </div>
         </div>
       </div>
@@ -254,7 +268,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span data-year></span> InsightDesk 실전 강의</p>
+        <p>© 2025 InsightDesk 실전 강의</p>
       </div>
     </footer>
 
