@@ -17,6 +17,27 @@
       }
     }
   });
+
+  // Theme toggle (dark / light) using localStorage
+  try {
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+      const root = document.documentElement;
+      const key = 'theme-preference';
+      const apply = (mode) => {
+        if (mode === 'light') root.classList.add('light');
+        else root.classList.remove('light');
+      };
+      const initial = localStorage.getItem(key) || 'dark';
+      apply(initial);
+      toggle.addEventListener('click', function () {
+        const current = root.classList.contains('light') ? 'light' : 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        localStorage.setItem(key, next);
+        apply(next);
+      });
+    }
+  } catch (_) {}
 })();
 
 

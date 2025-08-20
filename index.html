@@ -5,54 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4주 실전 바이브코딩 강의</title>
     <meta name="description" content="4주 동안 데스크톱 앱 + API + YouTube 분석 + 인증 시스템을 실전으로 배우는 강의" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-black/80 focus:text-white focus:px-3 focus:py-2 focus:rounded">본문으로 건너뛰기</a>
     <header class="site-header">
       <div class="container">
         <a class="brand" href="./">InsightDesk 실전 강의</a>
         <nav class="nav" aria-label="주요 메뉴">
           <a href="pages/intro.html">개요</a>
-          <a href="pages/week1/" >1주차</a>
-          <a href="pages/week2/" >2주차</a>
-          <a href="pages/week3/" >3주차</a>
-          <a href="pages/week4/" >4주차</a>
+          <a href="pages/week1/">1주차</a>
+          <a href="pages/week2/">2주차</a>
+          <a href="pages/week3/">3주차</a>
+          <a href="pages/week4/">4주차</a>
           <a href="pages/improvements.html">개선 사항</a>
+          <button id="themeToggle" class="ml-3 px-2 py-1 rounded border" aria-label="다크 모드 전환">🌓</button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
-      <section class="hero">
-        <h1>4주 실전 바이브코딩 강의</h1>
-        <p>일렉트론 데스크톱 앱부터 API 연동, YouTube 데이터 분석, 인증 시스템까지. "배우면 바로 써먹는" 실전 프로젝트.</p>
-        <p>
-          <a class="btn" href="pages/intro.html">개요 보러가기</a>
-        </p>
+    <main id="main" class="container">
+      <section class="hero pt-14 pb-10">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">배우면 바로 써먹는 4주 실전 프로젝트</h1>
+          <p class="mt-2 text-lg text-gray-400">Electron 데스크톱 앱 · 외부 API · YouTube 데이터 분석 · 인증 시스템까지 한 번에</p>
+          <div class="mt-5 flex items-center justify-center gap-3">
+            <a class="btn" href="pages/intro.html">커리큘럼 보기</a>
+            <a class="btn" style="background:#1f2937" href="https://github.com/nestezup/github-page-01" target="_blank" rel="noopener">GitHub 저장소</a>
+          </div>
+        </div>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h2>1주차: 일렉트론 기초</h2>
-          <p>파일시스템, 터미널, 컴포넌트 기반 개발로 바로 실행되는 데스크톱 앱 만들기.</p>
-          <a class="link" href="pages/week1/">자세히</a>
+          <h2>실무 중심</h2>
+          <p>회사에서 바로 쓰는 패턴만 골라 배우고, 매 단계 작동 확인.</p>
         </article>
         <article class="card">
-          <h2>2주차: 외부 API 연동</h2>
-          <p>Dify 워크플로우, Scrapper 서버와 통신하며 에러 핸들링과 실무 패턴 익히기.</p>
-          <a class="link" href="pages/week2/">자세히</a>
+          <h2>누적 완성도</h2>
+          <p>1→4주차로 이어지는 흐름으로 포트폴리오급 결과물 완성.</p>
         </article>
         <article class="card">
-          <h2>3주차: YouTube 분석 대시보드</h2>
-          <p>실제 데이터 가공과 시각화로 인사이트 도출, 포트폴리오 급 완성도 달성.</p>
-          <a class="link" href="pages/week3/">자세히</a>
+          <h2>초심자 친화</h2>
+          <p>막힘 포인트를 선제 안내하고 대체 경로까지 제시.</p>
         </article>
-        <article class="card">
-          <h2>4주차: 인증 시스템 구현</h2>
-          <p>구글 OAuth, 로그인 플로우, 인증 기반 기능으로 서비스 수준으로 마무리.</p>
-          <a class="link" href="pages/week4/">자세히</a>
-        </article>
+      </section>
+
+      <section class="content mb-8">
+        <h2 style="margin-top:0;">커리큘럼 한눈에 보기</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
+          <a href="pages/week1/" class="card no-underline"><h3>1주차</h3><p>일렉트론 기초, 파일시스템, 컴포넌트</p></a>
+          <a href="pages/week2/" class="card no-underline"><h3>2주차</h3><p>외부 API 연동과 에러 핸들링</p></a>
+          <a href="pages/week3/" class="card no-underline"><h3>3주차</h3><p>YouTube 데이터 분석 대시보드</p></a>
+          <a href="pages/week4/" class="card no-underline"><h3>4주차</h3><p>구글 OAuth와 인증 기반 기능</p></a>
+        </div>
+      </section>
+
+      <section class="content mb-8">
+        <h2 style="margin-top:0;">자주 묻는 질문</h2>
+        <div class="space-y-2">
+          <details class="card">
+            <summary><strong>개발 초보도 따라갈 수 있나요?</strong></summary>
+            <p class="mt-2">네. 각 단계별 체크리스트와 실패 시 복구 가이드를 제공합니다.</p>
+          </details>
+          <details class="card">
+            <summary><strong>어떤 결과물을 만들게 되나요?</strong></summary>
+            <p class="mt-2">실제 배포 가능한 데스크톱 앱과 분석 대시보드, 인증 기능을 갖춘 완성본입니다.</p>
+          </details>
+          <details class="card">
+            <summary><strong>준비물은 무엇인가요?</strong></summary>
+            <p class="mt-2">기본적인 Node.js 환경과 GitHub 계정만 있으면 시작할 수 있습니다.</p>
+          </details>
+        </div>
       </section>
 
       <section class="content" style="margin-bottom:32px;">
