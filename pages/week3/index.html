@@ -23,34 +23,232 @@
     </header>
 
     <main class="container page">
-      <h1>3주차: YouTube 데이터 분석 대시보드</h1>
-      <p class="meta">학습 목표 · 세션 구성 · 개선 포인트</p>
+      <!-- Hero Section -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">3</span>
+          </div>
+          <div class="text-left">
+            <h1 class="text-3xl font-bold mb-1">YouTube 데이터 분석 대시보드</h1>
+            <p class="meta text-sm">데이터 가공 · 시각화 · 인사이트 도출</p>
+          </div>
+        </div>
+        
+        <!-- Progress Indicator -->
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <div class="w-8 h-2 bg-purple-500 rounded-full opacity-60"></div>
+          <div class="w-8 h-2 bg-cyan-500 rounded-full opacity-60"></div>
+          <div class="w-8 h-2 bg-red-500 rounded-full"></div>
+          <div class="w-8 h-2 bg-gray-600 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- YouTube Analytics Demo -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+          </div>
+          YouTube 분석 대시보드 데모
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <!-- Key Metrics Cards -->
+          <div class="card bg-gradient-to-br from-red-500/10 to-red-600/10 border-red-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-red-300">전체 조회수</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-red-400 mb-1">2.4M</div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+12.5%</span>
+              <span class="text-gray-400">지난 주 대비</span>
+            </div>
+          </div>
+          
+          <div class="card bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-blue-300">채널 구독자</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="m22 21-3-3m0 0a6 6 0 1 0-6-6 6 6 0 0 0 6 6z"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-blue-400 mb-1">128K</div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+8.2%</span>
+              <span class="text-gray-400">지난 주 대비</span>
+            </div>
+          </div>
+          
+          <div class="card bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border-emerald-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-semibold text-emerald-300">평균 시청 시간</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-emerald-400 mb-1">4:32</div>
+            <div class="flex items-center gap-1 text-sm">
+              <span class="text-emerald-400">+0:45</span>
+              <span class="text-gray-400">지난 주 대비</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+              <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+              주간 조회수 추이
+            </h3>
+            <canvas id="ytChart" data-chart="bar" height="200"></canvas>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+              <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+              콘텐츠 유형별 분포
+            </h3>
+            <canvas id="contentChart" data-chart="doughnut" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+            </svg>
+          </div>
+          학습 목표
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-red-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-red-400 text-sm">📈</span>
+              </div>
+              <h3 class="font-semibold">데이터 시각화</h3>
+            </div>
+            <p class="text-sm">대시보드의 실무 활용과 인사이트 도출</p>
+          </div>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-red-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-red-400 text-sm">⚙️</span>
+              </div>
+              <h3 class="font-semibold">데이터 가공</h3>
+            </div>
+            <p class="text-sm">API 데이터의 가공과 분석 기법</p>
+          </div>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-red-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-red-400 text-sm">🔗</span>
+              </div>
+              <h3 class="font-semibold">누적 시너지</h3>
+            </div>
+            <p class="text-sm">1-2주차 학습 내용의 시너지 체험</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session Timeline -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          세션 구성 (총 110분)
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-purple-500/10 to-transparent border-l-4 border-purple-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">1</div>
+            <div>
+              <h3 class="font-semibold mb-1">도입부 (10분)</h3>
+              <p class="text-sm text-gray-400">누적 효과와 대시보드의 실무 가치</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">2</div>
+            <div>
+              <h3 class="font-semibold mb-1">실습1: YouTube Data API 연동 (30분)</h3>
+              <p class="text-sm text-gray-400 mb-2">관심 채널을 직접 분석하며 API 이해도 심화</p>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="bg-red-500/20 text-red-300 px-2 py-1 rounded">채널 데이터</span>
+                <span class="bg-red-500/20 text-red-300 px-2 py-1 rounded">비디오 통계</span>
+                <span class="bg-red-500/20 text-red-300 px-2 py-1 rounded">실시간 분석</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-blue-500/10 to-transparent border-l-4 border-blue-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">3</div>
+            <div>
+              <h3 class="font-semibold mb-1">실습2: 데이터 시각화 (40분)</h3>
+              <p class="text-sm text-gray-400 mb-2">차트가 실시간으로 그려지는 과정과 인사이트 도출</p>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded">라인 차트</span>
+                <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded">바 차트</span>
+                <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded">도너츠 차트</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">4</div>
+            <div>
+              <h3 class="font-semibold mb-1">실습3: 대시보드 완성 (30분)</h3>
+              <p class="text-sm text-gray-400 mb-2">UI/UX 개선과 사용자 친화적 인터페이스</p>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">필터 기능</span>
+                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">반응형 디자인</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Improvements -->
       <div class="content">
-        <h2>학습 목표</h2>
-        <ul>
-          <li>데이터 시각화 실무 활용</li>
-          <li>API 데이터 가공/분석</li>
-          <li>누적 학습 시너지 체험</li>
-        </ul>
-
-        <h2>세션 구성</h2>
-        <ol>
-          <li>도입부(10분): 완성도 향상 동기부여</li>
-          <li>실습1(30분): YouTube Data API 연동</li>
-          <li>실습2(40분): 데이터 시각화</li>
-          <li>실습3(30분): 대시보드 완성</li>
-        </ol>
-
-        <h2>데모 차트</h2>
-        <p class="meta">예시 데이터로 차트를 렌더링합니다.</p>
-        <canvas id="ytChart" data-chart="bar" height="180"></canvas>
-
-        <h2>개선 포인트</h2>
-        <ul>
-          <li>복잡성 분해로 단순화</li>
-          <li>차트 완성 순간의 성취감</li>
-          <li>실무 대시보드와의 유사점 강조</li>
-        </ul>
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22,4 12,14.01 9,11.01"/>
+            </svg>
+          </div>
+          핵심 개선 포인트
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card bg-gradient-to-br from-orange-500/5 to-orange-600/5 border-orange-500/20">
+            <h3 class="font-semibold mb-2 text-orange-300">복잡성 분해</h3>
+            <p class="text-sm">데이터가 복잡해 보이지만 하나씩 나누면 간단</p>
+          </div>
+          <div class="card bg-gradient-to-br from-red-500/5 to-red-600/5 border-red-500/20">
+            <h3 class="font-semibold mb-2 text-red-300">시각화 임팩트</h3>
+            <p class="text-sm">차트 완성 순간의 성취감 극대화</p>
+          </div>
+          <div class="card bg-gradient-to-br from-blue-500/5 to-blue-600/5 border-blue-500/20">
+            <h3 class="font-semibold mb-2 text-blue-300">실무 연결</h3>
+            <p class="text-sm">실제 회사 대시보드와의 유사점 강조</p>
+          </div>
+        </div>
       </div>
     </main>
 

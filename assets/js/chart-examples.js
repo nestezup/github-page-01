@@ -244,6 +244,37 @@
           }
         });
       }
+      
+      // Week 3 content chart
+      if (canvas.id === 'contentChart') {
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['튜토리얼', '리뷰', '브이로그', '라이브'],
+            datasets: [{
+              data: [35, 25, 25, 15],
+              backgroundColor: [
+                '#ef4444', // red
+                '#3b82f6', // blue  
+                '#10b981', // emerald
+                '#f59e0b'  // amber
+              ],
+              borderWidth: 0,
+              cutout: '65%',
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { color: '#94a3b8', font: { size: 11 }, padding: 15 }
+              }
+            }
+          }
+        });
+      }
     });
   });
 })();
