@@ -576,6 +576,11 @@ code {
   .page {
     padding: var(--space-8) 0 var(--space-16);
   }
+  
+  .page h1,
+  .page h3 {
+    padding-left: var(--space-2);
+  }
 }
 
 /* Animation Classes */
