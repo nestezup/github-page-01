@@ -572,6 +572,10 @@ code {
   .content {
     padding: var(--space-4);
   }
+  
+  .page {
+    padding: var(--space-8) 0 var(--space-16);
+  }
 }
 
 /* Animation Classes */
