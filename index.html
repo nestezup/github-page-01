@@ -25,65 +25,222 @@
       </div>
     </header>
 
-    <main id="main" class="container">
-      <section class="hero pt-14 pb-10">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">배우면 바로 써먹는 4주 실전 프로젝트</h1>
-          <p class="mt-2 text-lg text-gray-400">Electron 데스크톱 앱 · 외부 API · YouTube 데이터 분석 · 인증 시스템까지 한 번에</p>
-          <div class="mt-5 flex items-center justify-center gap-3">
-            <a class="btn" href="pages/intro.html">커리큘럼 보기</a>
-            <a class="btn" style="background:#1f2937" href="https://github.com/nestezup/github-page-01" target="_blank" rel="noopener">GitHub 저장소</a>
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container text-center animate-fade-in-up">
+          <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-sm font-medium">4주 완주 시 포트폴리오 완성</span>
+          </div>
+          
+          <h1>배우면 바로 써먹는<br>4주 실전 프로젝트</h1>
+          <p>Electron 데스크톱 앱부터 외부 API 연동, YouTube 데이터 분석, 인증 시스템까지.<br>현업에서 바로 활용 가능한 기술 스택을 한 번에 습득하세요.</p>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a class="btn btn-primary" href="pages/intro.html">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              커리큘럼 자세히 보기
+            </a>
+            <a class="btn btn-secondary" href="https://github.com/nestezup/github-page-01" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              GitHub 저장소
+            </a>
+          </div>
+          
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">실무 중심</h3>
+              <p class="text-gray-400">회사에서 바로 쓰는 패턴만 골라 배우고, 매 단계 작동 확인</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">누적 완성도</h3>
+              <p class="text-gray-400">1→4주차로 이어지는 흐름으로 포트폴리오급 결과물 완성</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">초심자 친화</h3>
+              <p class="text-gray-400">막힘 포인트를 선제 안내하고 대체 경로까지 제시</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card">
-          <h2>실무 중심</h2>
-          <p>회사에서 바로 쓰는 패턴만 골라 배우고, 매 단계 작동 확인.</p>
-        </article>
-        <article class="card">
-          <h2>누적 완성도</h2>
-          <p>1→4주차로 이어지는 흐름으로 포트폴리오급 결과물 완성.</p>
-        </article>
-        <article class="card">
-          <h2>초심자 친화</h2>
-          <p>막힘 포인트를 선제 안내하고 대체 경로까지 제시.</p>
-        </article>
-      </section>
-
-      <section class="content mb-8">
-        <h2 style="margin-top:0;">커리큘럼 한눈에 보기</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
-          <a href="pages/week1/" class="card no-underline"><h3>1주차</h3><p>일렉트론 기초, 파일시스템, 컴포넌트</p></a>
-          <a href="pages/week2/" class="card no-underline"><h3>2주차</h3><p>외부 API 연동과 에러 핸들링</p></a>
-          <a href="pages/week3/" class="card no-underline"><h3>3주차</h3><p>YouTube 데이터 분석 대시보드</p></a>
-          <a href="pages/week4/" class="card no-underline"><h3>4주차</h3><p>구글 OAuth와 인증 기반 기능</p></a>
+      <!-- Curriculum Overview -->
+      <section class="container">
+        <div class="content">
+          <h2>커리큘럼 로드맵</h2>
+          <p class="meta">4주간의 학습 여정을 한눈에 확인하세요</p>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <a href="pages/week1/" class="card no-underline group">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-white font-bold">1</span>
+                </div>
+                <div>
+                  <h3 class="group-hover:text-purple-400 transition-colors">일렉트론 데스크톱 앱 기초</h3>
+                  <p class="text-sm mt-1">파일시스템, 터미널, 컴포넌트 기반 개발</p>
+                  <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+                    <span>⏱️ 100분</span>
+                    <span>•</span>
+                    <span>🎯 실행형 앱 완성</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <a href="pages/week2/" class="card no-underline group">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-white font-bold">2</span>
+                </div>
+                <div>
+                  <h3 class="group-hover:text-cyan-400 transition-colors">외부 API 연동과 서버 통신</h3>
+                  <p class="text-sm mt-1">Dify 워크플로우, Scrapper 서버 연동</p>
+                  <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+                    <span>⏱️ 110분</span>
+                    <span>•</span>
+                    <span>🎯 API 통신 마스터</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <a href="pages/week3/" class="card no-underline group">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-white font-bold">3</span>
+                </div>
+                <div>
+                  <h3 class="group-hover:text-emerald-400 transition-colors">YouTube 데이터 분석 대시보드</h3>
+                  <p class="text-sm mt-1">실제 데이터 가공과 시각화 구현</p>
+                  <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+                    <span>⏱️ 110분</span>
+                    <span>•</span>
+                    <span>🎯 대시보드 완성</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <a href="pages/week4/" class="card no-underline group">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-white font-bold">4</span>
+                </div>
+                <div>
+                  <h3 class="group-hover:text-amber-400 transition-colors">인증 시스템 구현과 완성</h3>
+                  <p class="text-sm mt-1">구글 OAuth, 로그인 플로우, 권한 관리</p>
+                  <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+                    <span>⏱️ 110분</span>
+                    <span>•</span>
+                    <span>🎯 서비스 수준 완성</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="content mb-8">
-        <h2 style="margin-top:0;">자주 묻는 질문</h2>
-        <div class="space-y-2">
-          <details class="card">
-            <summary><strong>개발 초보도 따라갈 수 있나요?</strong></summary>
-            <p class="mt-2">네. 각 단계별 체크리스트와 실패 시 복구 가이드를 제공합니다.</p>
-          </details>
-          <details class="card">
-            <summary><strong>어떤 결과물을 만들게 되나요?</strong></summary>
-            <p class="mt-2">실제 배포 가능한 데스크톱 앱과 분석 대시보드, 인증 기능을 갖춘 완성본입니다.</p>
-          </details>
-          <details class="card">
-            <summary><strong>준비물은 무엇인가요?</strong></summary>
-            <p class="mt-2">기본적인 Node.js 환경과 GitHub 계정만 있으면 시작할 수 있습니다.</p>
-          </details>
+      <!-- FAQ Section -->
+      <section class="container">
+        <div class="content">
+          <h2>자주 묻는 질문</h2>
+          <div class="space-y-4">
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span><strong>개발 초보도 따라갈 수 있나요?</strong></span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-3 pl-4 border-l-2 border-purple-500/30">
+                네, 가능합니다. 각 단계별로 상세한 체크리스트와 실패 시 복구 가이드를 제공합니다. 
+                또한 막힘 포인트를 사전에 안내하여 원활한 학습을 돕습니다.
+              </p>
+            </details>
+            
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span><strong>어떤 결과물을 만들게 되나요?</strong></span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-3 pl-4 border-l-2 border-cyan-500/30">
+                실제 배포 가능한 데스크톱 애플리케이션과 YouTube 데이터 분석 대시보드, 
+                구글 OAuth 인증 기능을 갖춘 완성도 높은 프로젝트를 만들게 됩니다.
+              </p>
+            </details>
+            
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span><strong>준비물은 무엇인가요?</strong></span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-3 pl-4 border-l-2 border-emerald-500/30">
+                기본적인 Node.js 환경과 GitHub 계정만 있으면 시작할 수 있습니다. 
+                추가로 필요한 도구들은 강의 중에 함께 설치하며 진행합니다.
+              </p>
+            </details>
+            
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span><strong>완료 후 취업에 도움이 될까요?</strong></span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-3 pl-4 border-l-2 border-amber-500/30">
+                네, 많은 도움이 됩니다. 완성된 프로젝트는 포트폴리오로 활용할 수 있으며, 
+                실무에서 자주 사용되는 기술 스택을 다루므로 면접에서도 어필할 수 있습니다.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
 
-      <section class="content" style="margin-bottom:32px;">
-        <h2 style="margin-top:0;">실시간 예시 차트</h2>
-        <p class="meta">데모 데이터로 그려진 방문 추이입니다.</p>
-        <canvas id="visitorsChart" data-chart="line" height="140"></canvas>
+      <!-- Demo Chart Section -->
+      <section class="container">
+        <div class="content">
+          <h2>실시간 학습 진행률 데모</h2>
+          <p class="meta">실제 강의에서 구현할 차트 미리보기</p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-lg font-semibold mb-3">주간 학습 진행률</h3>
+              <canvas id="visitorsChart" data-chart="line" height="200"></canvas>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-3">기술 스택 완성도</h3>
+              <canvas id="skillsChart" data-chart="doughnut" height="200"></canvas>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

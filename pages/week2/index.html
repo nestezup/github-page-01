@@ -23,30 +23,189 @@
     </header>
 
     <main class="container page">
-      <h1>2주차: 외부 API 연동과 실전 서버 통신</h1>
-      <p class="meta">학습 목표 · 세션 구성 · 개선 포인트</p>
+      <!-- Hero Section -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">2</span>
+          </div>
+          <div class="text-left">
+            <h1 class="text-3xl font-bold mb-1">외부 API 연동과 실전 서버 통신</h1>
+            <p class="meta text-sm">Dify · Scrapper · 에러 핸들링</p>
+          </div>
+        </div>
+        
+        <!-- Progress Indicator -->
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <div class="w-8 h-2 bg-purple-500 rounded-full opacity-60"></div>
+          <div class="w-8 h-2 bg-cyan-500 rounded-full"></div>
+          <div class="w-8 h-2 bg-gray-600 rounded-full"></div>
+          <div class="w-8 h-2 bg-gray-600 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- API Integration Demo -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+            </svg>
+          </div>
+          API 연돐 성공률 데모
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-3">주간 API 호출 현황</h3>
+            <canvas id="apiChart" data-chart="bar" height="200"></canvas>
+          </div>
+          <div class="space-y-4">
+            <div class="card bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border-emerald-500/20">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-semibold text-emerald-300">Dify API</span>
+                <span class="text-2xl font-bold text-emerald-400">98.2%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-2">
+                <div class="bg-emerald-500 h-2 rounded-full" style="width: 98.2%"></div>
+              </div>
+              <p class="text-xs text-gray-400 mt-2">성공률</p>
+            </div>
+            <div class="card bg-gradient-to-br from-cyan-500/10 to-cyan-600/10 border-cyan-500/20">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-semibold text-cyan-300">Scrapper Server</span>
+                <span class="text-2xl font-bold text-cyan-400">95.7%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-2">
+                <div class="bg-cyan-500 h-2 rounded-full" style="width: 95.7%"></div>
+              </div>
+              <p class="text-xs text-gray-400 mt-2">성공률</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+            </svg>
+          </div>
+          학습 목표
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-400 text-sm">🌐</span>
+              </div>
+              <h3 class="font-semibold">실제 통신</h3>
+            </div>
+            <p class="text-sm">실제 외부 시스템과의 통신 경험</p>
+          </div>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-400 text-sm">🔗</span>
+              </div>
+              <h3 class="font-semibold">패턴 습득</h3>
+            </div>
+            <p class="text-sm">API 연동의 현업 패턴 습득</p>
+          </div>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <span class="text-cyan-400 text-sm">⚠️</span>
+              </div>
+              <h3 class="font-semibold">에러 핸들링</h3>
+            </div>
+            <p class="text-sm">실무적 에러 처리 및 복구 방법</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session Timeline -->
+      <div class="content mb-8">
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          세션 구성 (총 110분)
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-purple-500/10 to-transparent border-l-4 border-purple-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">1</div>
+            <div>
+              <h3 class="font-semibold mb-1">도입부 (15분)</h3>
+              <p class="text-sm text-gray-400">지난 주 내용 연결 및 API의 실무 가치</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-cyan-500/10 to-transparent border-l-4 border-cyan-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">2</div>
+            <div>
+              <h3 class="font-semibold mb-1">실습1: Dify 워크플로우 연동 (45분)</h3>
+              <p class="text-sm text-gray-400 mb-2">API 키 설정 → 요청 전송 → 응답 처리 단계별 성공</p>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">연결 성공</span>
+                <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">응답 받음</span>
+                <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">화면 표시</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">3</div>
+            <div>
+              <h3 class="font-semibold mb-1">실습2: Scrapper 서버 연동 (35분)</h3>
+              <p class="text-sm text-gray-400 mb-2">셀프 호스팅 서버와의 데이터 교환</p>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">데이터 처리</span>
+                <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">실전 패턴</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 bg-gradient-to-r from-amber-500/10 to-transparent border-l-4 border-amber-500 rounded-r-lg">
+            <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">4</div>
+            <div>
+              <h3 class="font-semibold mb-1">마무리 (15분)</h3>
+              <p class="text-sm text-gray-400">외부 시스템 연동 성과 확인 및 3주차 데이터 분석 예고</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Improvements -->
       <div class="content">
-        <h2>학습 목표</h2>
-        <ul>
-          <li>실제 외부 시스템과 통신</li>
-          <li>API 연동 패턴 습득</li>
-          <li>에러 핸들링 실무 접근</li>
-        </ul>
-
-        <h2>세션 구성</h2>
-        <ol>
-          <li>도입부(15분): 연속성과 가치</li>
-          <li>실습1(45분): Dify 워크플로우 연동</li>
-          <li>실습2(35분): Scrapper 서버 연동</li>
-          <li>마무리(15분): 성취 확인</li>
-        </ol>
-
-        <h2>개선 포인트</h2>
-        <ul>
-          <li>API 실패 체크리스트 제공</li>
-          <li>회사에서 쓰는 에러 핸들링</li>
-          <li>단계별 성취감 관리</li>
-        </ul>
+        <h2 class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22,4 12,14.01 9,11.01"/>
+            </svg>
+          </div>
+          핵심 개선 포인트
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card bg-gradient-to-br from-red-500/5 to-red-600/5 border-red-500/20">
+            <h3 class="font-semibold mb-2 text-red-300">API 실패 대응</h3>
+            <p class="text-sm">연동 실패 시 체크리스트와 대안 제시</p>
+          </div>
+          <div class="card bg-gradient-to-br from-cyan-500/5 to-cyan-600/5 border-cyan-500/20">
+            <h3 class="font-semibold mb-2 text-cyan-300">현업 패턴</h3>
+            <p class="text-sm">실제 회사에서 사용하는 에러 핸들링 방식</p>
+          </div>
+          <div class="card bg-gradient-to-br from-emerald-500/5 to-emerald-600/5 border-emerald-500/20">
+            <h3 class="font-semibold mb-2 text-emerald-300">성취감 관리</h3>
+            <p class="text-sm">단계별 성공 체크로 학습 의욕 유지</p>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -56,6 +215,8 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../assets/js/chart-examples.js"></script>
     <script src="../../assets/js/main.js"></script>
   </body>
   </html>
